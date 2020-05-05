@@ -2,9 +2,11 @@
 font-family: "ProximaNovaRegular"; 
 src: url("../fonts/ProximaNovaRegular.ttf") format("truetype"); 
 }
-@lg: ~"(max-width:1030px)";
+@xl: ~"(max-width:1376px)";
+@lg: ~"(max-width:1099px)";
 @md: ~"(max-width:890px)";
 @sm: ~"(max-width:780px)";
+
 body{
     font-family: "PT Sans", sans-serif;
     font-size:100%;
@@ -50,6 +52,7 @@ h3{
 }
 
 header{ 
+    position: relative;
     .header_logo{  
         max-width:243px;
             img{
@@ -72,13 +75,16 @@ header{
     }
     .header_text{
         display: inline-block;
-        @media @md{
-            display: none;
-        }    
-        margin-left: 2.78%;
+        font-size: 0.875rem;
+        margin-left: 2.5%;
         margin-top: 3.6%;
         vertical-align: top; 
-        font-size: 0.875rem;
+        @media @xl{
+            margin-left: 1.5%;
+        }
+        @media @md{
+            display: none;
+        } 
         .header_text-item{
             display: inline-block;
             margin-right: 20px;
@@ -93,42 +99,70 @@ header{
         }
     }
     .header_menu{
-        margin-left: 21%;
+        display: inline-block;
+        margin-top: 3%;
+        margin-left: 18%;
+        @media @xl{
+            margin-left: 10%;
+            padding: 0;
+        }
         @media @lg{
             margin-left: 5%;
         }
-        margin-top: 3%;
-        display: inline-block;
         @media @md{
+          margin: 0 auto;
           display: none;
+          width:80%;
+          text-align: center;
+          
         }
         vertical-align: top;
-            li {
+        li{
             margin-left: 30px;
             list-style: none;
             display: inline-block;
+            @media @xl{
+                margin-left: 15px;
+            }
+            @media @md{
+                display: block;
+                margin-left: 0px;
+                line-height: 45px;	
+                width:100%;
+                border-bottom: 1px solid #8DC33E;
+                &:hover{
+                      background-color: #8DC33E;  
+                }
+                &:hover> a{
+                     color: white;  
+                }
+            }
                 a{
                     text-decoration: none;
                     height: 17px;		
                     color: #1D1C1C;	
                     font-size: 0.875rem;	
                     line-height: 17px;	
-                    text-align: right;  
+                    text-align: right; 
+                    @media @md{
+                        font-size: 1rem;                                    
+                    }
                 } 
             &:first-child{
                margin-left: 0px;  
             }
         }
     }
-    .header_button{
+    .header__button{
             display: inline-block;
-            @media @md{
-                display: block;
-                margin: auto;
-                width: 150px;
+            @media @xl{
+                margin-left: 5px;
+                margin-bottom: 15px;
             }
-            @media @sm{
+            @media @lg{
+                display: block;
                 margin: 15px auto;
+                width: 150px;
             }
             max-width: 180px;	
             border-radius: 4px;	
@@ -141,17 +175,22 @@ header{
             font-size: 1rem;
         }
 }
-/* Блок 1*/
 .block1{
     background: url(mainphoto.jpg) no-repeat;
     background-size: cover;
     margin: 0 auto;
     padding-top: 6.1%;
+    .wrapper{
+        text-align: center;
+    }
     .block1_title{
         display: block;
         margin: auto;
         width: 41.666%;
         text-align: center; 
+        @media @md{
+            width: 61.666%;
+        }
     }
     .block1_text{
         margin-top: 1.15%;
@@ -163,23 +202,24 @@ header{
         font-size: 1.2rem;	
         line-height: 28px; 
         text-align: center;
-        margin: 2% auto 0 auto;  
+        margin: 2% auto 0;  
+        @media @md{
+            width: 61.666%;
+        }
     } 
-    .button{
+    .block1__button{
         height: auto;	
         width: 180px;	
         border-radius: 4px;	
         background-color: #8DC33E;
-        display: inline-block;
         text-align: center;
         color: white; 
-        margin:4.6% 43.75% ;
+        display: inline-block;
+        margin:4.6% auto;
         padding: 15px;
         font-size: 1rem;
         font-family: "ProximaNovaRegular";
-        @media @md{
-            margin: 5% 40%  
-        }
+
     }
 }
 .block2{
@@ -220,6 +260,7 @@ header{
             }
             li{   
                 list-style: none;
+                cursor: pointer;
                 @media @md{
                     margin: 15px;
                     font-size: 2rem;
@@ -229,6 +270,7 @@ header{
                     &:hover>a{
                         color: white;
                     }
+                    border-bottom: 1px solid #8DC33E;
                     line-height: 45px;	
                     width: 50%;
                     margin: 0 auto;
@@ -249,6 +291,7 @@ header{
             } 
         }
         .block2_menu_content{
+            min-height: 400px;
             .tab_item{
                 .border-line{
                     height: 1px;		
@@ -301,7 +344,6 @@ header{
         }
     }
 }
-            /* Блок 3 */
 .block3{
     border-bottom: 1px solid #EAEAEA;
     
