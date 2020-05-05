@@ -8,6 +8,7 @@ src: url("../fonts/ProximaNovaRegular.ttf") format("truetype");
 body{
     font-family: "PT Sans", sans-serif;
     font-size:100%;
+    min-width: 560px;
     @media @md{
         font-size:61.8%;
     }
@@ -181,9 +182,6 @@ header{
         }
     }
 }
-
-
-  /* Блок 2 */
 .block2{
     background-color: white;	
     background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(235,235,235,0.5) 100%);
@@ -203,6 +201,8 @@ header{
             border-bottom: 2px solid #89C53D;
             @media @md{
                 border: none;
+                background-color: #8DC33E;
+                color: white;
             }
             
         }
@@ -219,7 +219,21 @@ header{
                 display: none;
             }
             li{   
-                list-style: none; 
+                list-style: none;
+                @media @md{
+                    margin: 15px;
+                    font-size: 2rem;
+                    &:hover{
+                      background-color: #8DC33E;  
+                    }
+                    &:hover>a{
+                        color: white;
+                    }
+                    line-height: 45px;	
+                    width: 50%;
+                    margin: 0 auto;
+                    border-radius: 5%;
+                }
                 a{
                     text-decoration: none;	
                     color: #9297A7;		
@@ -228,6 +242,9 @@ header{
                     line-height: 17px;	
                     text-align: center;
                     text-transform: uppercase;    
+                    @media @md{
+                        color: black;
+                    }
                 }
             } 
         }
@@ -236,6 +253,9 @@ header{
                 .border-line{
                     height: 1px;		
                     background-color: #EAEAEA;
+                    @media @md{
+                        display: none;
+                    }
                 }
                 .tab__item-image{
                     display: inline-block;
@@ -250,6 +270,7 @@ header{
                     font-size: 20px;
                     margin-top: 1.388%;
                     margin-bottom: 21.875%;
+                    display: inline-block;
                 }
                 .block2_text{
                     display: inline-block;
